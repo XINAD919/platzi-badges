@@ -2,9 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <section class="w-full border-t border-gray-800 section-footer">
+    <section className="flex items-center justify-center w-full h-14 section-footer rounded-b-xl">
       <footer>
-        <div class="hashtak text-center">#platziconf</div>
+        <div className="hashtak text-center text-green-400 text-lg">
+          #platziconf
+        </div>
       </footer>
     </section>
   );

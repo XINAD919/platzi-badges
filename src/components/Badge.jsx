@@ -2,30 +2,32 @@ import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Badge = () => {
+const Badge = ({ nombre, apellido, avatar, jobTitle, twitter }) => {
   return (
-    <div class="container flex flex-col bg-gray-800 h-screen justify-center items-center">
-      <div className="ctn-badge w-1/2 sm:w-full border bg-gray-50 border-red-500 rounded-xl">
+    <div className="flex flex-col sm:h-screen items-center">
+      <div className="ctn-badge w-full sm:w-full  bg-gray-50 rounded-xl shadow">
         <Header />
-        <section class=" flex flex-col section-title ">
-          <div class="flex flex-row justify-center items-center">
-            <div class=" img-user flex justify-center">
+        <section className=" flex flex-col section-title ">
+          <div className="flex flex-row justify-center items-center py-8">
+            <div className=" img-user mr-6 sm:mr-6 flex md:mr-8 ">
               <img
-                class="avatar"
-                src="https://www.gravatar.com/avatar?d=identicon"
+                className="avatar w-16 rounded-full md:w-28 sm:w-12"
+                src={avatar}
                 alt="Avatar"
               />
             </div>
-            <div class="user-name">
+            <div className="user-name md:text-5xl sm:text-3xl text-3xl font-bold text-gray-800">
               <h1>
-                Daniel <br />
-                Castaño
+                {nombre} <br />
+                {apellido}
               </h1>
             </div>
           </div>
-          <div class="info-user">
-            <p>Junior Frontend Enginieer</p>
-            <p class="twitter">@Da_919</p>
+          <div className="info-user flex flex-col  items-center text-lg bg-gray-100">
+            <h3 className="font-light">{jobTitle}</h3>
+            <p className="twitter text-blue-500 font-semibold">
+              <i className="fab fa-twitter text-blue-600 "></i>@{twitter}
+            </p>
           </div>
         </section>
         <Footer />

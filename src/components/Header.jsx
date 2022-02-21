@@ -2,9 +2,9 @@ import React from "react";
 import confLogo from "../images/badge-header.svg";
 const Header = () => {
   return (
-    <section class="section-header border-b border-gray-800">
+    <section className="section-header">
       <header>
-        <div class="logo-header w-full">
+        <div className="logo-header flex justify-center items-center bg-gray-800 h-20 rounded-t-xl">
           <img src={confLogo} alt="Logo conferencia" />
         </div>
       </header>

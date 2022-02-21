@@ -1,0 +1,8 @@
+.ctn-badge .section-title .info-user p.twitter:after {
+  content: "";
+}
+.ctn-badge .section-title .info-user p.twitter:before {
+  content: "";
+}
+
+/*# sourceMappingURL=badge.css.map */
