@@ -12,7 +12,7 @@ const Home = () => {
             <h1 className="text-4xl mb-2 w-72 sm:w-auto">
               Badge Management System
             </h1>
-            <Link className="bg-green-500 px-14 py-2 rounded" to="/badge">
+            <Link className="bg-green-500 px-14 py-2 rounded" to="/badges">
               Start
             </Link>
           </div>

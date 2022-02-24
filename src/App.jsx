@@ -11,8 +11,8 @@ function App() {
         <Route element={<BadgeLayout />}>
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/badge" element={<Badges />} />
-          <Route path="/badge/new" element={<BadgeNew />} />
+          <Route path="/badges" element={<Badges />} />
+          <Route path="/badges/new" element={<BadgeNew />} />
         </Route>
       </Routes>
     </div>

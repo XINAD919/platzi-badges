@@ -7,7 +7,7 @@ const NotFound = () => {
       <img className="w-1/2" src={astronauts} alt="page not found" />
       <h1>404 <br />
       OOPS PAGE NOT FOUND</h1>
-      <Link className="text-green-500 text-2xl underline pt-2" to="/badge">Return to Home
+      <Link className="text-green-500 text-2xl underline pt-2" to="/">Return to Home
       </Link>
     </div>
   );
