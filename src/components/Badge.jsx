@@ -1,22 +1,20 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import Gravatar from "./Gravatar";
 
-const Badge = ({ nombre, apellido, avatar, jobTitle, twitter }) => {
+const Badge = ({ nombre, apellido, avatar, jobTitle, twitter,email }) => {
   return (
     <div className="flex flex-col sm:h-screen items-center">
       <div className="ctn-badge w-full sm:w-full  bg-gray-50 rounded-xl shadow">
         <Header />
         <section className=" flex flex-col section-title ">
           <div className="flex flex-row justify-center items-center py-8">
-            <div className=" img-user mr-6 sm:mr-6 flex md:mr-8 ">
-              <img
-                className="avatar w-16 rounded-full md:w-28 sm:w-12"
-                src={avatar}
-                alt="Avatar"
-              />
+            <div className=" img-user w-1/2 ">
+             <Gravatar 
+              email={email} />
             </div>
-            <div className="user-name md:text-5xl sm:text-3xl text-3xl font-bold text-gray-800">
+            <div className="user-name md:text-5xl sm:text-3xl w-1/2 text-3xl font-bold text-gray-800">
               <h1>
                 {nombre} <br />
                 {apellido}

@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import api from "api";
+import md5 from "md5";
+import { toast,ToastContainer } from "react-toastify";
+
 const BadgeForm = ({ onChange }) => {
   const form = useRef(null);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const fd = new FormData(form.current);
 
@@ -11,12 +15,26 @@ const BadgeForm = ({ onChange }) => {
       obj[key] = value;
     });
     console.log("datos enviados del form", obj);
-  };
+    const hash = md5(obj.email);
+    const avatar = `https://www.gravatar.com/avatar/${hash}?d=identicon`;
+    const objConAvatar = { ...obj, avatar };
 
+    const Sendbadge = await api.badges.create(objConAvatar);
+    Sendbadge
+      ? toast.success("Badge creado con exito")
+      : toast.error("Error creando Badge");
+  };
+ 
   return (
     <div className="text-center  w-9/12">
+
       <h1 className="text-gray-800 text-3xl font-light">New Attendant</h1>
-      <form ref={form} onChange={onChange} onSubmit={submitForm} className="mb-2">
+      <form
+        ref={form}
+        onChange={onChange}
+        onSubmit={submitForm}
+        className="mb-2"
+      >
         <div className="flex flex-col w-full mb-3">
           <label className="pb-2 self-start text-black" htmlFor="firstName">
             First Name

@@ -3,6 +3,7 @@ import confLogo from "images/badge-header.svg";
 import BadgesList from "components/BadgesList";
 import { Link } from "react-router-dom";
 import api from "../api";
+import Loading from "components/Loading";
 
 const Badges = () => {
   const [Badges, setBadges] = useState([]);
@@ -44,8 +45,8 @@ const Badges = () => {
   if (loading) {
     return (
       <>
-        <div className="h-96 flex items-center justify-center">
-          <h1 className="text-2xl">Loading...</h1>
+        <div className="h-screen flex justify-center items-center">
+          <Loading type={"spinningBubbles"} color={"#98CA3F"} />
         </div>
       </>
     );
@@ -55,8 +56,8 @@ const Badges = () => {
     <div className="h-full bg-gray-50">
       <div className="Badges">
         <div className="Badges__hero">
-          <div className="Badges__container flex justify-center items-center h-48">
-            <img className="w-48 mb-4" src={confLogo} alt="logo" />
+          <div className="Badges__container flex flex-col justify-center items-center h-56">
+            <img className="w-48 sm:w-56 mb-4" src={confLogo} alt="logo" />
           </div>
         </div>
       </div>
