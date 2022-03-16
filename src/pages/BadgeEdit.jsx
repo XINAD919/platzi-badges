@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Badge from "components/Badge";
 import BadgeForm from "components/BadgeForm";
 import header from "../images/platziconf-logo.svg";
-import { Link, useNavigate } from "react-router-dom";
-import api from "api";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import api from "../api";
 import md5 from "md5";
 import Loading from "components/Loading";
 
-const BadgeNew = () => {
+const BadgeEdit = () => {
+  // id
+  const { badgeId } = useParams();
+  // para mandar a la pag de badges al dar submit
+  const navigate = useNavigate();
+  
   const [dataUser, setdataUser] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
+  // control del form
   const handdleChange = (e) => {
     setdataUser({
       ...dataUser,
@@ -20,16 +26,37 @@ const BadgeNew = () => {
     });
     console.log("datos escritos", dataUser);
   };
+// get
+  useEffect(() => {
+    const fetchInfo = async () => {
+      setLoading(true);
+      try {
+        const data = await api.badges.read(badgeId);
+        setdataUser(data);
+        setLoading(false);
+        setEjecutarConsulta(false);
+        console.log("datos obtenidos", dataUser);
+        console.log("badge id", badgeId);
+      } catch (err) {
+        setLoading(false);
+        setError(err);
+      }
+    };
 
+    if (ejecutarConsulta) {
+      fetchInfo();
+    }
+  }, [ejecutarConsulta, badgeId, dataUser]);
+// send
   const handdleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const hash = md5(dataUser.email);
       const avatar = `https://www.gravatar.com/avatar/${hash}?d=identicon`;
-      await api.badges.create({ ...dataUser, avatar });
-      navigate("/badges");
+      await api.badges.update(badgeId, { ...dataUser, avatar });
       setLoading(false);
+      navigate("/badges");
       console.log(dataUser);
     } catch (err) {
       setError(err);
@@ -70,6 +97,7 @@ const BadgeNew = () => {
               onSubmit={handdleSubmit}
               onChange={handdleChange}
               error={error}
+              data={dataUser}
             />
           </div>
         </div>
@@ -78,4 +106,4 @@ const BadgeNew = () => {
   );
 };
 
-export default BadgeNew;
+export default BadgeEdit;

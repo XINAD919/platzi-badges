@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 const BadgeLayout = () => {
   return (
-    <div className="h-screen">
+    <div className="h-auto">
       <Navbar />
       <Outlet />
       <ToastContainer />

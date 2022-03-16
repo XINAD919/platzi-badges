@@ -58,8 +58,8 @@
       "firstName": "daniel",
       "lastName": "Castaño",
       "email": "xinad919@gmail.com",
-      "jobTitle": "diseñadora grafica",
-      "twitter": "jnlkmm",
+      "jobTitle": "diseñador grafico",
+      "twitter": "jnlkmm_9293",
       "avatar": "https://www.gravatar.com/avatar/624e56590a92db0d1c16c1be72a5a688?d=identicon",
       "id": "xftFHID"
     },
@@ -80,6 +80,96 @@
       "twitter": "iholnl",
       "avatar": "https://www.gravatar.com/avatar/1d0aeba40a7a85cc5638945e769ad1af?d=identicon",
       "id": "DMTCmMH"
+    },
+    {
+      "firstName": "Daniel",
+      "lastName": "Castaño Barrera",
+      "email": "da_919@hotmail.com",
+      "jobTitle": "Jr frontend developer",
+      "twitter": "da_3893495387",
+      "avatar": "https://www.gravatar.com/avatar/08a104ef78ed1233548712d7f61187be?d=identicon",
+      "id": "rngmjo4"
+    },
+    {
+      "firstName": "Daniel",
+      "lastName": "Castaño Barrera",
+      "email": "da_919@hotmail.com",
+      "jobTitle": "Jr frontend developer",
+      "twitter": "da_3893495387",
+      "avatar": "https://www.gravatar.com/avatar/08a104ef78ed1233548712d7f61187be?d=identicon",
+      "id": "rxO9inI"
+    },
+    {
+      "firstName": "Daniel augusto",
+      "lastName": "uribe zanchez",
+      "email": "da_919@hotmail.com",
+      "jobTitle": "Desarrollador",
+      "twitter": "deasdsaj",
+      "avatar": "https://www.gravatar.com/avatar/08a104ef78ed1233548712d7f61187be?d=identicon",
+      "id": "1Y2WWc5"
+    },
+    {
+      "firstName": "paola",
+      "lastName": "Castaño Barrera",
+      "email": "pc.barrera@hotmail.com",
+      "jobTitle": "analista",
+      "twitter": "pcastanob",
+      "avatar": "https://www.gravatar.com/avatar/1d0aeba40a7a85cc5638945e769ad1af?d=identicon",
+      "id": "UnwCJkJ"
+    },
+    {
+      "firstName": "test",
+      "lastName": "test tset",
+      "email": "xinad919@gmail.com",
+      "jobTitle": "teaster",
+      "twitter": "teasterR221",
+      "avatar": "https://www.gravatar.com/avatar/624e56590a92db0d1c16c1be72a5a688?d=identicon",
+      "id": "LTAESzw"
+    },
+    {
+      "firstName": "test2",
+      "lastName": "test hastamorir",
+      "email": "xinad919@gmail.com",
+      "jobTitle": "tester",
+      "twitter": "hastamorirtest",
+      "avatar": "https://www.gravatar.com/avatar/624e56590a92db0d1c16c1be72a5a688?d=identicon",
+      "id": "vS51MXI"
+    },
+    {
+      "email": "bmsg0518@gmail.com",
+      "firstName": "sergio",
+      "lastName": "Beltrán",
+      "jobTitle": "Web master",
+      "twitter": "bmsg0518",
+      "avatar": "https://www.gravatar.com/avatar/9d7b211840f6b69849c438d8868a6aac?d=identicon",
+      "id": "ScC4wWt"
+    },
+    {
+      "firstName": "kenny",
+      "lastName": "sierra",
+      "email": "kennysanroque123@gmail.com",
+      "jobTitle": "analista",
+      "twitter": "kennysierraPuertas123",
+      "avatar": "https://www.gravatar.com/avatar/e4b56510b7da9199e8e0720464d25f1c?d=identicon",
+      "id": "ShW_1dV"
+    },
+    {
+      "firstName": "juan",
+      "lastName": "lolcha",
+      "email": "juanlolcha07@hotmail.com",
+      "jobTitle": "business manager",
+      "twitter": "juanlolcha07Oficial",
+      "avatar": "https://www.gravatar.com/avatar/7ecb06698edfe986ad94ebf0db429c43?d=identicon",
+      "id": "UhgK_ZE"
+    },
+    {
+      "firstName": "abdul",
+      "lastName": "kumar",
+      "email": "abdkls@hotmail.com",
+      "jobTitle": "Desarrollador Full Stack ",
+      "twitter": "cuminator69",
+      "avatar": "https://www.gravatar.com/avatar/5de353b060ac1b16e60c0c400ef5be1a?d=identicon",
+      "id": "AzotgW9"
     }
   ]
 }

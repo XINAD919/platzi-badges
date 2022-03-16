@@ -1,45 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
-import api from "api";
-import md5 from "md5";
-import { toast,ToastContainer } from "react-toastify";
+import React, { useRef } from "react";
 
-const BadgeForm = ({ onChange }) => {
+const BadgeForm = ({ onChange, onSubmit, error, data }) => {
   const form = useRef(null);
-
-  const submitForm = async (e) => {
-    e.preventDefault();
-    const fd = new FormData(form.current);
-
-    const obj = {};
-    fd.forEach((value, key) => {
-      obj[key] = value;
-    });
-    console.log("datos enviados del form", obj);
-    const hash = md5(obj.email);
-    const avatar = `https://www.gravatar.com/avatar/${hash}?d=identicon`;
-    const objConAvatar = { ...obj, avatar };
-
-    const Sendbadge = await api.badges.create(objConAvatar);
-    Sendbadge
-      ? toast.success("Badge creado con exito")
-      : toast.error("Error creando Badge");
-  };
- 
+  if (!data) {
+    data = "";
+  }
   return (
     <div className="text-center  w-9/12">
-
       <h1 className="text-gray-800 text-3xl font-light">New Attendant</h1>
-      <form
-        ref={form}
-        onChange={onChange}
-        onSubmit={submitForm}
-        className="mb-2"
-      >
+      <form ref={form} onChange={onChange} onSubmit={onSubmit} className="mb-2">
         <div className="flex flex-col w-full mb-3">
           <label className="pb-2 self-start text-black" htmlFor="firstName">
             First Name
           </label>
           <input
+            defaultValue={data.firstName}
             required
             className="border pl-3 border-gray-300 h-9 rounded-md"
             type="text"
@@ -52,6 +27,7 @@ const BadgeForm = ({ onChange }) => {
             Last Name
           </label>
           <input
+            defaultValue={data.lastName}
             required
             className="border pl-3 border-gray-300 h-9 rounded-md"
             type="text"
@@ -64,6 +40,7 @@ const BadgeForm = ({ onChange }) => {
             Email
           </label>
           <input
+            defaultValue={data.email}
             required
             className="border pl-3 border-gray-300 h-9 rounded-md"
             type="email"
@@ -76,6 +53,7 @@ const BadgeForm = ({ onChange }) => {
             Job Title
           </label>
           <input
+            defaultValue={data.jobTitle}
             required
             className="border pl-3 border-gray-300 h-9 rounded-md"
             type="text"
@@ -88,6 +66,7 @@ const BadgeForm = ({ onChange }) => {
             Twitter
           </label>
           <input
+            defaultValue={data.twitter}
             required
             className="border pl-3 border-gray-300 h-9 rounded-md"
             type="text"
@@ -101,6 +80,7 @@ const BadgeForm = ({ onChange }) => {
         >
           Save
         </button>
+        {error && <p className="text-red-600">{error.message}</p>}
       </form>
     </div>
   );

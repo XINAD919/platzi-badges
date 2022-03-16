@@ -53,7 +53,7 @@ const Badges = () => {
   }
 
   return (
-    <div className="h-full bg-gray-50">
+    <div className="h-auto bg-gray-50">
       <div className="Badges">
         <div className="Badges__hero">
           <div className="Badges__container flex flex-col justify-center items-center h-56">
